@@ -1,0 +1,47 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/Layout">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/homeL"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="148dp"
+        android:layout_marginStart="148dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="database"
+            android:id="@+id/butt2" />
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="getJson"
+        android:id="@+id/butt1"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/homeL"
+        android:layout_alignEnd="@+id/homeL"
+        android:layout_marginRight="453dp"
+        android:layout_marginEnd="453dp"
+        android:clickable="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kiosk`"
+        android:id="@+id/viewKiosk1"
+        android:layout_below="@+id/butt1"
+        android:layout_alignLeft="@+id/butt1"
+        android:layout_alignStart="@+id/butt1" />
+</RelativeLayout>

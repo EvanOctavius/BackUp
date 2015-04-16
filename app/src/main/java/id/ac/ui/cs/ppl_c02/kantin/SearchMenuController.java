@@ -24,7 +24,7 @@ public class SearchMenuController {
                 };
 
         //Where KEY_KIOSK = id
-        String mSelectionClause = MenuKios.KioskMenus.KEY_COST+ " < ?";
+        String mSelectionClause = MenuKios.KioskMenus.KEY_COST+ " <= ?";
         String[] mSelectionArgs = {harga};
 
         //execute query
@@ -36,7 +36,7 @@ public class SearchMenuController {
             do {
                 //temporary variabel
                 HashMap<String, String> temp = new HashMap<>();
-                temp.put(MenuKios.KioskMenus.KEY_KIOSK, c.getString(0));
+                temp.put(MenuKios.KioskMenus.KEY_MENU, c.getString(0));
                 temp.put(Kiosk.Kiosks.KEY_NAME, c.getString(1));
                 //Log.e("Iterasi Menu", temp.toString());
 
@@ -48,7 +48,7 @@ public class SearchMenuController {
 
         //tutup cursor
         c.close();
-        Log.e("getKiosk", "Hasil  = " + listMenu.toString() + " = " + listMenu.size());
+        Log.e("getMenu", "Hasil  = " + listMenu.toString() + " = " + listMenu.size());
 
         //return statement
         return listMenu;
@@ -88,7 +88,7 @@ public class SearchMenuController {
 
         //tutup cursor
         c.close();
-        Log.e("getKiosk", "Hasil  = " + listMenu.toString() + " = " + listMenu.size());
+        Log.e("getMenu", "Hasil  = " + listMenu.toString() + " = " + listMenu.size());
 
         //return statement
         return listMenu;

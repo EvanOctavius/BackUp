@@ -3,5 +3,79 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="db_sync">MySQLSQLLiteSync</string>
-    <string name="action_settings">Settings</string>
+    <string name="menu_activity_label">Menu</string>
+    <string name="searchkiosk_label">Kiosk</string>
+
+    <string name="app_nav_home_label">App Navigation</string>
+
+    <string name="simple_up_label">Simple Up Navigation</string>
+    <string name="simple_up_description">This demo shows the simple case of up navigation that does not ever need to cross across different tasks. Press the up button on the action bar to return to the demo list. For simple drill-down navigation, the application up and system back buttons will navigate to the same location, leaving the task\'s back stack in the same state.</string>
+
+    <string name="peer_label">Peer Activities</string>
+    <string name="peer_description">This is an activity that shows content with many navigation peers. Think of a content browser that offers links to related content items. Pressing back from this activity will return to the previously viewed content item if you reached this point through a related link. If you reached it from the app nav example home activity, back will return there. Navigating up from this activity will always return to the app nav example home activity and clean up the back stack along the way.</string>
+    <string name="launch_peer">Link to another peer activity</string>
+    <string name="peer_count">Peer count: </string>
+
+    <string name="view_from_other_task_label">View from other task</string>
+    <string name="view_from_other_task_description">This combined demo shows how to handle up navigation when another task has launched your app\'s activity on its own task stack. Navigating up in this scenario should synthesize a task stack representing the most common or direct navigation path to the parent activity. The code example shows how to handle this using helper code from the support library. Press the button below to launch a separate task and begin the demo.</string>
+    <string name="launch_other_task">Launch new task</string>
+
+    <string name="outside_task_label">Outside Task</string>
+    <string name="outside_task_description">This activity has been launched in a new task. You can confirm this by pressing the Recents button now and switching back to the app navigation example task. This activity will view content with the fake mimetype \"application/x-example\" which will be received by another code example activity to continue the demo. Press the View button below.</string>
+
+    <string name="content_view_label">Content Viewer</string>
+    <string name="content_view_description">This activity can receive ACTION_VIEW intents with the mimetype \"application/x-example\", sent by the outside task component of this demo. If you launched the activity this way then it will be on the viewing activity\'s task stack. Press the back button to finish this activity and return to the activity that wanted to view the content. Press the up button in the action bar to jump back into the main demo task with a synthesized back stack. This matches the pattern for content viewers such as a photo gallery or video player.</string>
+    <string name="default_status_text">Navigated here from category</string>
+
+    <string name="content_category_label">Content Category</string>
+    <string name="intermediate_description">This activity is a parent for the example content viewer activity. Navigating up from the content viewer will lead here. Navigating up from here will lead back to the app navigation home activity. Note that if you reached this activity by navigating up from the example content viewer activity, you are back on the main app navigation example task. Press the button below to navigate to the content viewer activity.</string>
+    <string name="launch_content_view">Launch content view activity</string>
+
+    <string name="notifications_label">Notifications</string>
+    <string name="notifications_description">There are two classes of notifications: notifications that deep-link into an app directly, (e.g. an incoming SMS) and notifications that present an interstitial/summary of multiple collapsed notifications before linking into the app itself. (e.g. Calendar event notifications.) The buttons below will create notifications of each type.</string>
+    <string name="post_direct_notification">Post direct notification</string>
+    <string name="post_interstitial_notification">Post interstitial notification</string>
+
+    <string name="interstitial_label">Interstitial</string>
+    <string name="interstitial_description">This is an interstitial activity running in response to a notification. It presents a summary of info in a lightweight manner that does not exist as a task in Recents. Tap the button below to jump to the primary content.</string>
+
+    <string name="kalori_label">Kalori</string>
+    <string name="kalori_description">Hakikatnya, kalori adalah satuan untuk energi sehingga dapat diartikan bahwa kalori pada makanan adalah energi yang terkandung di dalamnya.
+Setiap hari, tubuh manusia membutuhkan energi sebagai sumber tenaga untuk berbagai aktivitas.\n
+Terdapat beberapa faktor penentu kalori yang dibutuhkan seseorang, di antaranya adalah faktor usia, kelamin, berat dan tinggi badan, kebugaran, serta aktivitas.
+\n\n
+Secara umum, pria membutuhkan sekitar 2.500 kalori dan wanita membuthkan 2.200 kalori per hari dengan harapan mengandung gizi seimbang.
+Tentu angka tersebut dipengaruhi beberapa hal yang telah disebutkan di atas.
+\n\n
+Namun jika ingin menghitung kalori secara lebih spesifik, berikut penjelasannya.\n
+1. Menghitung BBI (Berat Badan Ideal)\n
+   BBI = 90% x (TB-100) kg dengan TB adalah tinggi badan\n
+   * perhitungan tidak berlaku untuk wanita dengan tinggi di bawah 150 cm dan pria dengan tinggi di bawah 160 cm\n
+2. Menghitung KKB (Kebutuhan Kalori Basal), yaitu jumlah kalori dasar yang dibutuhkan manusia untuk hidup tanpa aktivitas\n
+   - Pria  : 30 kkal x BBI\n
+   - Wanita: 25 kkal x BBI\n
+3. Menghitung KKT (Kebutuhan Kalori Total) yaitu jumlah kebutuhan kalori tubuh dan jumlah kalori saat aktivitas fisik\n
+   Ada tiga jenis aktivitas fisik yakni ringan (10–20%), sedang (20–30%), dan berat (40–50%) dengan beberapa contoh sebagai berikut.\n
+   - Ringan: 10% (membaca, menyetir, kerja kantoran), 20%(mengajar, berjalan)\n
+   - Sedang: 25% (kerja rumah tangga), 30% (jalan cepat, bersepeda)\n
+   - Berat : 40% (aerobik, mendaki, jogging)\n
+KKT akan menjadi acuan kebutuhkan kalori per hari masing-masing individu.\
+</string>
+
+
+    <string name="kolesterol_label">Kolesterol</string>
+    <string name="kolesterol_description">Kolestrol adalah lemak yang terdapat di dalam aliran darah atau sel tubuh yang sebenarnya dibutuhkan untuk pembentukan dinding sel dan sebagai bahan baku beberapa hormon.
+Namum apabila berlebihan, dapat memicu berbagi penyakit berbahaya.
+\n
+Secara umum, dewasa akan membutuhkan 1100 mg kolesterol per hari, dengan 300 mg diperoleh dari makanan dan 800 mg diproduksi oleh tubuh.
+Jika konsumsi kolesterol lebih dari 300 mg (tidak terlalu banyak) masih dapat ditolerir asalkan diimbangi dengan olahraga yang sesuai.
+\n\n
+Peningkatan kolesterol tidak langsung memberikan gejala yang jelas. Akan tetapi jika sudah lama dan parah, dapat menimbulkan nyeri dada, serangan jantung, stroke, dan lain-lain.</string>
+
+    <string name="kios_label">Kios</string>
+    <string name="kios_description">Keterangan kios</string>
+    <string name="action_settings" />
+    <string name="home_activity_label" />
+    <string name="searchmenu_label" />
+
 </resources>

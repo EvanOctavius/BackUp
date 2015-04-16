@@ -2,6 +2,8 @@ package id.ac.ui.cs.ppl_c02.kantin;
 
 import android.annotation.TargetApi;
 import android.content.ContentResolver;
+import android.content.Intent;
+import android.media.Image;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -18,13 +21,21 @@ import java.io.InputStreamReader;
 public class MainActivity extends ActionBarActivity {
 
 
+    ImageButton cobaButton;
+    ImageButton cobaButton1;
+    ImageButton searchButton;
+    ImageButton searchButton2;
+    ImageButton kaloriButton;
+    ImageButton kolesterolButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.coba);
 
-        Button viewK = (Button)findViewById(R.id.viewKiosk1);
+
+        /*Button viewK = (Button)findViewById(R.id.viewKiosk1);
 
         final HomeController homeController = new HomeController();
         final SearchKioskController searchKioskController = new SearchKioskController();
@@ -47,9 +58,9 @@ public class MainActivity extends ActionBarActivity {
             public void onClick(View v){
                 new JSONParser().execute("http://ppl-c02.cs.ui.ac.id/index.php/json/json_kios");
             }
-        });
+        });*/
 
-        Button butt2 = (Button)findViewById(R.id.butt2);
+        ImageButton butt2 = (ImageButton)findViewById(R.id.imageButton16);
 
         butt2.setOnClickListener(new View.OnClickListener(){
             @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
@@ -61,6 +72,81 @@ public class MainActivity extends ActionBarActivity {
                 ContentResolver.requestSync(null,DBContentProvider.AUTHORITY,bundle);
             }
         });
+
+        cobaButton = (ImageButton) findViewById(R.id.imageButton1);
+        cobaButton1 = (ImageButton) findViewById(R.id.imageButton2);
+        searchButton = (ImageButton) findViewById(R.id.imageButton11);
+        searchButton2 = (ImageButton) findViewById(R.id.imageButton12);
+        kaloriButton = (ImageButton) findViewById(R.id.imageButton13);
+        kolesterolButton = (ImageButton) findViewById(R.id.imageButton14);
+
+        kaloriButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent cobaIntent = new Intent(MainActivity.this, InfoKaloriActivity.class);
+                MainActivity.this.startActivity(cobaIntent);
+            }
+        });
+
+        kolesterolButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent cobaIntent = new Intent(MainActivity.this, InfoKolesterolActivity.class);
+                MainActivity.this.startActivity(cobaIntent);
+            }
+        });
+
+        searchButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent cobaIntent = new Intent(MainActivity.this, SearchKioskActivity.class);
+                MainActivity.this.startActivity(cobaIntent);
+            }
+        });
+
+        searchButton2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent cobaIntent = new Intent(MainActivity.this, SearchMenuActivity.class);
+                MainActivity.this.startActivity(cobaIntent);
+            }
+        });
+
+
+        cobaButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent cobaIntent = new Intent(MainActivity.this, KiosActivity.class);
+                cobaIntent.putExtra("id", "01");
+                MainActivity.this.startActivity(cobaIntent);
+            }
+        });
+
+        cobaButton1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                Intent cobaIntent = new Intent(MainActivity.this, MenuActivity.class);
+                cobaIntent.putExtra("id", "02");
+                MainActivity.this.startActivity(cobaIntent);
+            }
+        });
+
+    }
+
+    private void addListenerButton(){
+
     }
 
 

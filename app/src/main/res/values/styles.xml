@@ -5,4 +5,9 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="InterstitialDialogLayout"></style>
+
+    <style name="ButtonBar"></style>
+
+    <style name="ButtonBarButton"></style>
 </resources>

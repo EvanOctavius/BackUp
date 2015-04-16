@@ -59,6 +59,7 @@ public class DBContentProvider extends ContentProvider {
         uriMatcher.addURI(AUTHORITY, TABLE_CMENU, KomentarMenu.MenuComments.CMENU_CODE);
         uriMatcher.addURI(AUTHORITY, TABLE_ADMIN, Admin.Admins.ADMIN_CODE);
         uriMatcher.addURI(AUTHORITY,"KiosMenuKios",10);
+        uriMatcher.addURI(AUTHORITY,"MenuMenuKios",11);
     }
 
     public DBContentProvider(){
@@ -112,6 +113,7 @@ public class DBContentProvider extends ContentProvider {
     public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
         openDatabase();
         SQLiteQueryBuilder qb = new SQLiteQueryBuilder();
+        String tables ="";
         switch (uriMatcher.match(uri)) {
             case Kiosk.Kiosks.KIOSK_CODE:
                 qb.setTables(TABLE_KIOSK);
@@ -150,7 +152,12 @@ public class DBContentProvider extends ContentProvider {
                 qb.setProjectionMap(values);
                 break;
             case 10:
-                String tables = "Kios INNER JOIN MenuKios ON ("+ Kiosk.Kiosks.KEY_NO + "=" + MenuKios.KioskMenus.KEY_KIOSK+")";
+                tables = "Kios INNER JOIN MenuKios ON (" + Kiosk.Kiosks.KEY_NO + "=" + MenuKios.KioskMenus.KEY_KIOSK + ")";
+                qb.setTables(tables);
+                qb.setProjectionMap(values);
+                break;
+            case 11:
+                tables = "Menu INNER JOIN MenuKios ON (" + MenuKios.KioskMenus.KEY_MENU + "=" + Menu.Menus.KEY_NAME + ")";
                 qb.setTables(tables);
                 qb.setProjectionMap(values);
                 break;

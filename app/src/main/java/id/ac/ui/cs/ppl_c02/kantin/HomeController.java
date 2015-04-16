@@ -2,6 +2,7 @@ package id.ac.ui.cs.ppl_c02.kantin;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
+import android.net.Uri;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -62,10 +63,13 @@ public class HomeController{
         //Select Kolom yang ingin di ambil
         String[] mProjection =
                 {
-                        MenuKios.KioskMenus.KEY_KIOSK,
                         MenuKios.KioskMenus.KEY_MENU,
                         MenuKios.KioskMenus.KEY_COST,
-                        MenuKios.KioskMenus.KEY_TOTAL
+                        MenuKios.KioskMenus.KEY_TOTAL,
+                        Menu.Menus.KEY_CHOLERSTEROL,
+                        Menu.Menus.KEY_CALORIE,
+                        Menu.Menus.KEY_CARBO,
+                        Menu.Menus.KEY_PROT
                 };
 
         //Where KEY_KIOSK = id
@@ -74,17 +78,21 @@ public class HomeController{
 
         //execute query
         //MenuKios.KioskMenus.CONTENT_URI = tabel menu kios
-        Cursor c = contentResolver.query(MenuKios.KioskMenus.CONTENT_URI, mProjection,mSelectionClause,mSelectionArgs,null);
+        Cursor c = contentResolver.query(Uri.parse("content://" + DBContentProvider.AUTHORITY + "/MenuMenuKios"), mProjection,mSelectionClause,mSelectionArgs,null);
 
         //iterasi cursor untuk memproses semua hasil query
         if (c.moveToFirst()){
             do {
                 //temporary variabel
                 HashMap<String,String> menu = new HashMap<>();
-                menu.put(MenuKios.KioskMenus.KEY_KIOSK, c.getString(0));
-                menu.put(MenuKios.KioskMenus.KEY_MENU, c.getString(1));
-                menu.put(MenuKios.KioskMenus.KEY_COST, c.getString(2));
-                menu.put(MenuKios.KioskMenus.KEY_TOTAL, c.getString(3));
+                menu.put(MenuKios.KioskMenus.KEY_MENU, c.getString(0));
+                menu.put(MenuKios.KioskMenus.KEY_COST, c.getString(1));
+                menu.put(MenuKios.KioskMenus.KEY_TOTAL, c.getString(2));
+                menu.put(Menu.Menus.KEY_CHOLERSTEROL, c.getString(3));
+                menu.put(Menu.Menus.KEY_CALORIE, c.getString(4));
+                menu.put(Menu.Menus.KEY_CARBO, c.getString(5));
+                menu.put(Menu.Menus.KEY_PROT, c.getString(6));
+
                 //Log.e("Iterasi Menu",menu.toString());
 
                 //Masukan temporary varibel ke output akhir setiap iterasi
